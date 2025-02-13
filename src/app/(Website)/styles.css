@@ -1,0 +1,67 @@
+.btnshow:hover {
+  box-shadow: 0 0 0 0.3rem rgba(253, 215, 50, 0.4);
+}
+
+.vidshwo {
+  position: relative; /* Parent ke liye position set karna zaroori hai */
+  width: 66.66%; /* w-2/3 ke liye */
+  min-height: 85vh;
+  background-size: cover;
+}
+@media (max-width: 995px) {
+  /* md ke neeche */
+  .vidshwo {
+    width: 100%; /* Full width on smaller screens */
+    height: 85vh;
+  }
+  .swiper-button-prev{
+    display: none !important;
+  }
+  .swiper-button-next{
+    display: none !important;
+  }
+}
+
+.vidshwo::after {
+  content: "";
+  background: url("../../assets/video-patch.png") no-repeat center center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Taki video click hone par work kare */
+}
+.swiper-button-prev {
+  width: 50px !important;
+  height: 50px !important;
+  background: white;
+  border-radius: 50%;
+}
+.swiper-button-prev:hover{
+    background: yellow;
+}
+.swiper-button-prev:after {
+  font-size: 20px !important;
+  font-weight: bold;
+  color: gray;
+}
+.swiper-button-next {
+  width: 50px !important;
+  height: 50px !important;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  left: 8px !important;
+  top: 145px !important;
+
+}
+.swiper-button-next:hover{
+    background: yellow;
+}
+.swiper-button-next:after {
+  font-size: 20px !important;
+  font-weight: bold;
+  color: gray;
+}
