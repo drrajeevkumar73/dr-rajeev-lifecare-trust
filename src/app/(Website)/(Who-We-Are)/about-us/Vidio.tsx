@@ -4,7 +4,7 @@ import { Heart } from "lucide-react";
 
 export default function Vidio() {
   return (
-    <div className="ml-auto max-w-[1500px] ">
+    <div className="ml-auto max-w-[1400px] ">
       <div className="flex flex-col-reverse flex-wrap items-center justify-between gap-20 lg:flex-row lg:flex-nowrap ">
         <div className="lg:w-[40%] space-y-6 px-3">
           <h5 className="break-words text-2xl font-bold md:!leading-[50px]  md:text-4xl">

@@ -35,7 +35,7 @@ export default function Page() {
           <h1 className="text-center text-3xl font-bold md:text-5xl">
             Our Team
           </h1>
-          <div className="ml-auto flex max-w-[1500px] flex-wrap gap-20 overflow-hidden lg:flex-nowrap">
+          <div className="ml-auto flex max-w-[1400px] flex-wrap gap-20 overflow-hidden lg:flex-nowrap">
             <div className="w-full space-y-16 px-3 lg:w-[30%]">
               <h5 className="text-2xl font-bold text-white">
                 Managing Committee

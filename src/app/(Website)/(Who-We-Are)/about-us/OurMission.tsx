@@ -101,7 +101,7 @@ export default function OurMission() {
       </div>
       <Image
         src={cry}
-        className="absolute bottom-[20px] w-full rotate-180 sm:bottom-[50px] md:bottom-[100px] 2xl:bottom-[200px]"
+        className="absolute bottom-[20px] w-full rotate-180 sm:bottom-[50px] md:bottom-[100px] 2xl:bottom-[185px]"
         alt=""
       />
       <Image src={cry} className="w-full" alt="" />
