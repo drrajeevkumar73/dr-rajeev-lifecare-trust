@@ -17,6 +17,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import "./styles.css";
 import { useState } from "react";
+import Link from "next/link";
 
 interface classNameProps {
   className?: string;
@@ -78,45 +79,58 @@ export function Menubar({ className }: classNameProps) {
             <Image src={logo} alt="logo" width={100} height={100} />
           </div>
           <ul className="flex w-full items-center justify-center gap-4 text-[14px] text-muted-foreground">
-            <li className="cursor-pointer"> Home </li>
+            <Link href={"/"}>
+              <li className="cursor-pointer"> Home </li>
+            </Link>
             <li className="group relative cursor-pointer py-6">
               <span className="flex items-center">
                 Who We Are?
                 <ChevronDown className="ml-1 size-4 text-primary" />{" "}
               </span>{" "}
               <ul className="inset-shadow-2xs absolute left-1/2 top-[69px] hidden -translate-x-1/2 overflow-hidden rounded-b-sm bg-card shadow-lg group-hover:inline">
-                <li>
-                  <Button
-                    variant="ghost"
-                    className="flex w-full justify-start rounded-none"
-                  >
-                    About Us
-                  </Button>
-                </li>
-                <li>
-                  <Button
-                    variant="ghost"
-                    className="flex w-full justify-start rounded-none"
-                  >
-                    Why Children?
-                  </Button>
-                </li>
-                <li>
-                  <Button
-                    variant="ghost"
-                    className="flex w-full justify-start rounded-none"
-                  >
-                    Our Impact
-                  </Button>
-                </li>
-                <li>
-                  <Button
-                    variant="ghost"
-                    className="flex w-full justify-start rounded-none"
-                  >
-                    Our Approach
-                  </Button>
-                </li>
+                <Link href={"/about-us"}>
+                  <li>
+                    <Button
+                      variant="ghost"
+                      className="flex w-full justify-start rounded-none"
+                    >
+                      About Us
+                    </Button>
+                  </li>
+                </Link>
+                <Link href={"/why-children"}>
+                  {" "}
+                  <li>
+                    <Button
+                      variant="ghost"
+                      className="flex w-full justify-start rounded-none"
+                    >
+                      Why Children?
+                    </Button>
+                  </li>
+                </Link>
+                <Link href={"/our-impact"}>
+                  {" "}
+                  <li>
+                    <Button
+                      variant="ghost"
+                      className="flex w-full justify-start rounded-none"
+                    >
+                      Our Impact
+                    </Button>
+                  </li>
+                </Link>
+                <Link href={"/our-approach"}>
+                  {" "}
+                  <li>
+                    <Button
+                      variant="ghost"
+                      className="flex w-full justify-start rounded-none"
+                    >
+                      Our Approach
+                    </Button>
+                  </li>
+                </Link>
               </ul>
             </li>
             <li className="group relative cursor-pointer py-6">
@@ -275,44 +289,59 @@ export function PhoneMenuBar({ className }: classNameProps) {
           </Button>
         </div>
         <ul className="space-y-6">
-          <li className="group font-bold">Home</li>
+          ,
+          <Link href={"/"}>
+            {" "}
+            <li className="group font-bold">Home</li>
+          </Link>
           <li className="group font-bold">
             <span className="flex items-center justify-between">
               Who We Are? <ChevronDown />
             </span>
             <ul className="inset-shadow-sm mt-2 hidden rounded-sm shadow group-hover:block">
-              <li>
-                <Button
-                  variant="ghost"
-                  className="flex w-full justify-start rounded-none"
-                >
-                  About Us
-                </Button>
-              </li>
-              <li>
-                <Button
-                  variant="ghost"
-                  className="flex w-full justify-start rounded-none"
-                >
-                  Why Children?
-                </Button>
-              </li>
-              <li>
-                <Button
-                  variant="ghost"
-                  className="flex w-full justify-start rounded-none"
-                >
-                  Our Impact
-                </Button>
-              </li>
-              <li>
-                <Button
-                  variant="ghost"
-                  className="flex w-full justify-start rounded-none"
-                >
-                  Our Approach
-                </Button>
-              </li>
+              <Link href={"/about-us"}>
+                <li>
+                  <Button
+                    variant="ghost"
+                    className="flex w-full justify-start rounded-none"
+                  >
+                    About Us
+                  </Button>
+                </li>
+              </Link>
+              <Link href={"/why-children"}>
+                {" "}
+                <li>
+                  <Button
+                    variant="ghost"
+                    className="flex w-full justify-start rounded-none"
+                  >
+                    Why Children?
+                  </Button>
+                </li>
+              </Link>
+              <Link href={"/our-impact"}>
+                {" "}
+                <li>
+                  <Button
+                    variant="ghost"
+                    className="flex w-full justify-start rounded-none"
+                  >
+                    Our Impact
+                  </Button>
+                </li>
+              </Link>
+              <Link href={"/our-approach"}>
+                {" "}
+                <li>
+                  <Button
+                    variant="ghost"
+                    className="flex w-full justify-start rounded-none"
+                  >
+                    Our Approach
+                  </Button>
+                </li>
+              </Link>
             </ul>
           </li>
           <li className="group font-bold">

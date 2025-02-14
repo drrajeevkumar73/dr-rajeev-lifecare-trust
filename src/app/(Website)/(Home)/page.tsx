@@ -13,6 +13,7 @@ import CountUp from "@/components/CountUp";
 import StoryUpdate from "./StoryUpdate";
 import rajevsign from "@/assets/rippan-sig.jpg";
 import dsjh from "@/assets/home-bottom-banner.jpg";
+import froIma from "@/assets/footer-usp-1.jpg";
 import Paragraph from "./Paragraph";
 export default function Page() {
   return (
@@ -71,9 +72,34 @@ export default function Page() {
       </div>
 
       <Image className="w-full" src={dsjh} alt="" />
-     <div className="max-w-7xl mx-auto space-y-6 px-3">
-     <Paragraph/>
-     </div>
+      <div className="mx-auto max-w-7xl space-y-6 px-3">
+        <Paragraph />
+      </div>
+      <div className="mx-auto max-w-7xl px-3">
+        <div className="flex flex-wrap gap-7 md:flex-nowrap">
+          <div className="flex gap-5">
+            <Image src={froIma} alt="" />
+            <p>
+              {" "}
+              All our efforts are made possible only because of your support
+            </p>
+          </div>
+          <div className="flex gap-5">
+            <Image src={froIma} alt="" />
+            <p>
+              {" "}
+              All our efforts are made possible only because of your support
+            </p>
+          </div>
+          <div className="flex gap-5">
+            <Image src={froIma} alt="" />
+            <p>
+              {" "}
+              All our efforts are made possible only because of your support
+            </p>
+          </div>
+        </div>
+      </div>
     </main>
   );
 }

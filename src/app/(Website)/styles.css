@@ -14,10 +14,10 @@
     width: 100%; /* Full width on smaller screens */
     height: 85vh;
   }
-  .swiper-button-prev{
+  .swiper-button-prev {
     display: none !important;
   }
-  .swiper-button-next{
+  .swiper-button-next {
     display: none !important;
   }
 }
@@ -39,8 +39,8 @@
   background: white;
   border-radius: 50%;
 }
-.swiper-button-prev:hover{
-    background: yellow;
+.swiper-button-prev:hover {
+  background: yellow;
 }
 .swiper-button-prev:after {
   font-size: 20px !important;
@@ -55,13 +55,15 @@
   position: absolute;
   left: 8px !important;
   top: 145px !important;
-
 }
-.swiper-button-next:hover{
-    background: yellow;
+.swiper-button-next:hover {
+  background: yellow;
 }
 .swiper-button-next:after {
   font-size: 20px !important;
   font-weight: bold;
   color: gray;
+}
+.ReactModal__Overlay {
+  z-index: 99999999 !important;
 }
