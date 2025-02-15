@@ -207,66 +207,32 @@ export function Menubar({ className }: classNameProps) {
             </li>
             <li className="group relative cursor-pointer py-6">
               <span className="flex items-center">
-                Get Involved
+                Our Activities
                 <ChevronDown className="ml-1 size-4 text-primary" />{" "}
               </span>{" "}
               <ul className="inset-shadow-2xs absolute left-1/2 top-[69px] hidden -translate-x-1/2 overflow-hidden rounded-b-sm bg-card shadow-lg group-hover:inline">
-                <li>
-                  <Button
-                    variant="ghost"
-                    className="flex w-full justify-start rounded-none"
-                  >
-                    Volunteering & Internships
-                  </Button>
-                </li>
-                <li>
-                  <Button
-                    variant="ghost"
-                    className="flex w-full justify-start rounded-none"
-                  >
-                    Corporate Partners
-                  </Button>
-                </li>
-                <li>
-                  <Button
-                    variant="ghost"
-                    className="flex w-full justify-start rounded-none"
-                  >
-                    Careers
-                  </Button>
-                </li>
-              </ul>
-            </li>
-            <li className="group relative cursor-pointer py-6">
-              <span className="flex items-center">
-                Resources
-                <ChevronDown className="ml-1 size-4 text-primary" />{" "}
-              </span>{" "}
-              <ul className="inset-shadow-2xs absolute left-1/2 top-[69px] hidden -translate-x-1/2 overflow-hidden rounded-b-sm bg-card shadow-lg group-hover:inline">
-                <li>
-                  <Button
-                    variant="ghost"
-                    className="flex w-full justify-start rounded-none"
-                  >
-                    Blog
-                  </Button>
-                </li>
-                <li>
-                  <Button
-                    variant="ghost"
-                    className="flex w-full justify-start rounded-none"
-                  >
-                    Financials
-                  </Button>
-                </li>
-                <li>
-                  <Button
-                    variant="ghost"
-                    className="flex w-full justify-start rounded-none"
-                  >
-                    CRY Child Safeguarding Policy
-                  </Button>
-                </li>
+                <Link href={"/media-corner"}>
+                  {" "}
+                  <li>
+                    <Button
+                      variant="ghost"
+                      className="flex w-full justify-start rounded-none"
+                    >
+                      Media Corner
+                    </Button>
+                  </li>
+                </Link>
+                <Link href={"/social-activitie"}>
+                  {" "}
+                  <li>
+                    <Button
+                      variant="ghost"
+                      className="flex w-full justify-start rounded-none"
+                    >
+                      Social Activities
+                    </Button>
+                  </li>
+                </Link>
               </ul>
             </li>
           </ul>
@@ -434,66 +400,32 @@ export function PhoneMenuBar({ className }: classNameProps) {
           </li>
           <li className="group font-bold">
             <span className="flex items-center justify-between">
-              Get Involved
+              Our Activities
               <ChevronDown />
             </span>
             <ul className="inset-shadow-sm mt-2 hidden rounded-sm shadow group-hover:block">
-              <li>
-                <Button
-                  variant="ghost"
-                  className="flex w-full justify-start rounded-none"
-                >
-                  Volunteering & Internships
-                </Button>
-              </li>
-              <li>
-                <Button
-                  variant="ghost"
-                  className="flex w-full justify-start rounded-none"
-                >
-                  Corporate Partners
-                </Button>
-              </li>
-              <li>
-                <Button
-                  variant="ghost"
-                  className="flex w-full justify-start rounded-none"
-                >
-                  Careers
-                </Button>
-              </li>
-            </ul>
-          </li>
-          <li className="group font-bold">
-            <span className="flex items-center justify-between">
-              Resources
-              <ChevronDown />
-            </span>
-            <ul className="inset-shadow-sm mt-2 hidden rounded-sm shadow group-hover:block">
-              <li>
-                <Button
-                  variant="ghost"
-                  className="flex w-full justify-start rounded-none"
-                >
-                  Blog
-                </Button>
-              </li>
-              <li>
-                <Button
-                  variant="ghost"
-                  className="flex w-full justify-start rounded-none"
-                >
-                  Financials
-                </Button>
-              </li>
-              <li>
-                <Button
-                  variant="ghost"
-                  className="flex w-full justify-start rounded-none"
-                >
-                  CRY Child Safeguarding Policy
-                </Button>
-              </li>
+              <Link href={"/media-corner"}>
+                {" "}
+                <li>
+                  <Button
+                    variant="ghost"
+                    className="flex w-full justify-start rounded-none"
+                  >
+                    Media Corner
+                  </Button>
+                </li>
+              </Link>
+              <Link href={"/media-corner"}>
+                {" "}
+                <li>
+                  <Button
+                    variant="ghost"
+                    className="flex w-full justify-start rounded-none"
+                  >
+                    Social Activities
+                  </Button>
+                </li>
+              </Link>
             </ul>
           </li>
         </ul>
