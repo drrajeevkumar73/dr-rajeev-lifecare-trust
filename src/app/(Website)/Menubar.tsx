@@ -139,54 +139,70 @@ export function Menubar({ className }: classNameProps) {
                 <ChevronDown className="ml-1 size-4 text-primary" />{" "}
               </span>{" "}
               <ul className="inset-shadow-2xs absolute left-1/2 top-[69px] hidden -translate-x-1/2 overflow-hidden rounded-b-sm bg-card shadow-lg group-hover:inline">
-                <li>
-                  <Button
-                    variant="ghost"
-                    className="flex w-full justify-start rounded-none"
-                  >
-                    Child Education
-                  </Button>
-                </li>
-                <li>
-                  <Button
-                    variant="ghost"
-                    className="flex w-full justify-start rounded-none"
-                  >
-                    Child Health & Nutrition
-                  </Button>
-                </li>
-                <li>
-                  <Button
-                    variant="ghost"
-                    className="flex w-full justify-start rounded-none"
-                  >
-                    Stop Child Labour
-                  </Button>
-                </li>
-                <li>
-                  <Button
-                    variant="ghost"
-                    className="flex w-full justify-start rounded-none"
-                  >
-                    Support Girl Child Education
-                  </Button>
-                </li>
-                <li>
-                  <Button
-                    variant="ghost"
-                    className="flex w-full justify-start rounded-none"
-                  >
-                    Stop Child Marriage
-                  </Button>
-                </li>
-                <li>
-                  <Button
-                    variant="ghost"
-                    className="flex w-full justify-start rounded-none"
-                  >
-                    Prevent Child Trafficking
-                  </Button>
-                </li>
+                <Link href={"/children-education"}>
+                  <li>
+                    <Button
+                      variant="ghost"
+                      className="flex w-full justify-start rounded-none"
+                    >
+                      Child Education
+                    </Button>
+                  </li>
+                </Link>
+                <Link href={"/child-health-and-nutrition"}>
+                  <li>
+                    <Button
+                      variant="ghost"
+                      className="flex w-full justify-start rounded-none"
+                    >
+                      Child Health & Nutrition
+                    </Button>
+                  </li>
+                </Link>
+                <Link href={"/child-labour-prevention"}>
+                  {" "}
+                  <li>
+                    <Button
+                      variant="ghost"
+                      className="flex w-full justify-start rounded-none"
+                    >
+                      Stop Child Labour
+                    </Button>
+                  </li>
+                </Link>
+                <Link href={"/girls-education"}>
+                  {" "}
+                  <li>
+                    <Button
+                      variant="ghost"
+                      className="flex w-full justify-start rounded-none"
+                    >
+                      Support Girl Child Education
+                    </Button>
+                  </li>
+                </Link>
+                <Link href={"/child-marriage-prevention"}>
+                  {" "}
+                  <li>
+                    <Button
+                      variant="ghost"
+                      className="flex w-full justify-start rounded-none"
+                    >
+                      Stop Child Marriage
+                    </Button>
+                  </li>
+                </Link>
+                <Link href={"/child-trafficking"}>
+                  {" "}
+                  <li>
+                    <Button
+                      variant="ghost"
+                      className="flex w-full justify-start rounded-none"
+                    >
+                      Prevent Child Trafficking
+                    </Button>
+                  </li>
+                </Link>
               </ul>
             </li>
             <li className="group relative cursor-pointer py-6">
@@ -349,54 +365,71 @@ export function PhoneMenuBar({ className }: classNameProps) {
               What We Do? <ChevronDown />
             </span>
             <ul className="inset-shadow-sm mt-2 hidden rounded-sm shadow group-hover:block">
-              <li>
-                <Button
-                  variant="ghost"
-                  className="flex w-full justify-start rounded-none"
-                >
-                  Child Education
-                </Button>
-              </li>
-              <li>
-                <Button
-                  variant="ghost"
-                  className="flex w-full justify-start rounded-none"
-                >
-                  Child Health & Nutrition
-                </Button>
-              </li>
-              <li>
-                <Button
-                  variant="ghost"
-                  className="flex w-full justify-start rounded-none"
-                >
-                  Stop Child Labour
-                </Button>
-              </li>
-              <li>
-                <Button
-                  variant="ghost"
-                  className="flex w-full justify-start rounded-none"
-                >
-                  Support Girl Child Education
-                </Button>
-              </li>
-              <li>
-                <Button
-                  variant="ghost"
-                  className="flex w-full justify-start rounded-none"
-                >
-                  Stop Child Marriage
-                </Button>
-              </li>
-              <li>
-                <Button
-                  variant="ghost"
-                  className="flex w-full justify-start rounded-none"
-                >
-                  Prevent Child Trafficking
-                </Button>
-              </li>
+              ,
+              <Link href={"/children-education"}>
+                {" "}
+                <li>
+                  <Button
+                    variant="ghost"
+                    className="flex w-full justify-start rounded-none"
+                  >
+                    Child Education
+                  </Button>
+                </li>
+              </Link>
+              <Link href={"/child-health-and-nutrition"}>
+                <li>
+                  <Button
+                    variant="ghost"
+                    className="flex w-full justify-start rounded-none"
+                  >
+                    Child Health & Nutrition
+                  </Button>
+                </li>
+              </Link>
+              <Link href={"/child-labour-prevention"}>
+                {" "}
+                <li>
+                  <Button
+                    variant="ghost"
+                    className="flex w-full justify-start rounded-none"
+                  >
+                    Stop Child Labour
+                  </Button>
+                </li>
+              </Link>
+              <Link href={"/girls-education"}>
+                {" "}
+                <li>
+                  <Button
+                    variant="ghost"
+                    className="flex w-full justify-start rounded-none"
+                  >
+                    Support Girl Child Education
+                  </Button>
+                </li>
+              </Link>
+              <Link href={"/child-marriage-prevention"}>
+                {" "}
+                <li>
+                  <Button
+                    variant="ghost"
+                    className="flex w-full justify-start rounded-none"
+                  >
+                    Stop Child Marriage
+                  </Button>
+                </li>
+              </Link>
+              <Link href={"/child-trafficking"}>
+                <li>
+                  <Button
+                    variant="ghost"
+                    className="flex w-full justify-start rounded-none"
+                  >
+                    Prevent Child Trafficking
+                  </Button>
+                </li>
+              </Link>
             </ul>
           </li>
           <li className="group font-bold">

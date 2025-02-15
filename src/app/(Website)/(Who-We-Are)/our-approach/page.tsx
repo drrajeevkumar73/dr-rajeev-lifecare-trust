@@ -1,7 +1,7 @@
 import Image from "next/image";
 import bane from "@/assets/approach-main-banner-1.jpg";
 import Animation from "./Animation";
-import arehds from "@/assets/approach-middle-banner.jpg";
+import arehds from "@/assets/approach-middle-banner (1).jpg";
 import froIma from "@/assets/footer-usp-1.jpg";
 import TabBar from "@/components/TabBar";
 import { featureWorktabSec } from "./Allray";
