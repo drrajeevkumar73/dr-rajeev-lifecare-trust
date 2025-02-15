@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import InstallPWA from "@/components/InstallPWA";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
   },
   description:
     "Committed to delivering care, compassion, and wellness for a healthier community.",
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
@@ -20,9 +22,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={inter.className}
-      >
+      <body className={inter.className}>
+        <InstallPWA />
         {children}
       </body>
     </html>
