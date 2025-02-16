@@ -5,6 +5,7 @@ import InstallPWA from "@/components/InstallPWA";
 
 const inter = Inter({ subsets: ["latin"] });
 
+
 export const metadata: Metadata = {
   title: {
     template: "%s - Dr. Rajeev Lifecare Trust",
