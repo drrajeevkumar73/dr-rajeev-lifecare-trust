@@ -140,7 +140,7 @@ export default function Page() {
       <div className="mx-auto max-w-7xl space-y-16 px-3">
         <HeadingSec className="[text-shadow:_0_2px_4px_#fff633]">
           {" "}
-          About the Trust - Firstpethi Ayush Pethy{" "}
+          About the Trust - Firstpathy Ayush Pathy{" "}
           <em className="text-primary relative">
             Trust{" "}
             <Image

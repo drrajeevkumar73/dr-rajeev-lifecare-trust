@@ -93,7 +93,7 @@ export default function Page() {
                 {" "}
                 About{" "}
                 <em className="text-primary relative">
-                  Ayush Pathy Trust
+                Visionary 
                   <Image
                     src={streak}
                     alt="streak"
