@@ -1,0 +1,72 @@
+// This is your Prisma schema file,
+// learn more about it in the docs String https String//pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate String https String//pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String    @id
+  displayname  String
+  email        String?   @unique
+  phone        String?   @unique
+  passwordHash String?
+  googleId     String?   @unique
+  sessions     Session[]
+
+  @@map("users")
+}
+
+model Session {
+  id     String @id
+  userId String
+
+  expiresAt DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model HealnessDoctor {
+  id               String @id @default(cuid())
+  fullName         String
+  dateofBirth      String
+  gender           String
+  mobileNumber     String
+  emailID          String
+  fullAddress      String
+  fieldofExpertise String
+  qualification    String
+  experience       String
+  specialization   String
+
+  @@map("healnessDoctors")
+}
+
+model CallSedule {
+  id     String @id @default(cuid())
+  name   String
+  number String
+  date   String
+  time   String
+
+  @@map("callSedules")
+}
+
+model Contact {
+  id       String  @id @default(cuid())
+  fullname String
+  phone    String
+  message  String?
+
+  @@map("contacts")
+}
