@@ -18,8 +18,6 @@ import approchbaneer from "@/assets/aporbaner.webp";
 import signature from "@/assets/rippan-sig.jpg";
 import homebuttombanner from "@/assets/homebanner.webp";
 import HealnessForm from "./HealnessForm";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import smallPhoto from "@/assets/smal4.jpeg";
 import "../styles.css";
 import {
   getSliderItems,
@@ -27,6 +25,7 @@ import {
   getSliderItemsTwo,
 } from "./Allarry";
 import { useEffect, useRef, useState } from "react";
+import CampShow from "@/components/CapmShow";
 
 export default function Page() {
   const videoRef = useRef(null);
@@ -36,15 +35,15 @@ export default function Page() {
 
   useEffect(() => {
     document.documentElement.style.overflowX = "hidden"; // X-axis hidden
-    document.documentElement.style.overflowY = "auto";  // Y-axis allow
-    document.body.style.overflowX = "hidden";  
+    document.documentElement.style.overflowY = "auto"; // Y-axis allow
+    document.body.style.overflowX = "hidden";
     document.body.style.overflowY = "auto";
-  
+
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const newScale = 1 + scrollY * 0.0015;
       const moveDown = Math.min(scrollY * 0.5, 400);
-  
+
       if (scrollY > 600) {
         setFixed(false);
       } else {
@@ -53,7 +52,7 @@ export default function Page() {
         setTranslateY(moveDown);
       }
     };
-  
+
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -61,82 +60,84 @@ export default function Page() {
       document.body.style.overflow = "";
     };
   }, []);
+  
   return (
     <main className="w-full space-y-24 overflow-hidden">
-    {/* Upper Section */}
-    <div className="ml-auto max-w-[1400px]">
-      <div className="flex flex-col-reverse items-center gap-28 md:flex-row md:gap-5">
-        <div className="flex flex-col gap-5 px-3 md:w-1/3">
-          <h5 className="text-3xl leading-12 font-bold md:text-4xl">
-            Let’s ensure{" "}
-            <em className="text-primary relative">
-              Holistic
-              <Image
-                src={streak}
-                alt=""
-                className="absolute top-[-38px] right-0"
-              />
-            </em>{" "}
-            <br className="hidden lg:block" />
-            <em className="text-primary"> Healing </em>for{" "}
-            <br className="hidden lg:block" />
-            Well - Being
-          </h5>
-          <Button className="w-full" asChild>
-            <Link href={"/donate"}>
-              <Heart className="mr-4 size-4" fill="red" />
-              Yes! I want to Help!
-            </Link>
-          </Button>
-        </div>
+      {/* Upper Section */}
+      <div className="ml-auto max-w-[1400px]">
+        <div className="flex flex-col-reverse items-center gap-28 md:flex-row md:gap-5">
+          <div className="flex flex-col gap-5 px-3 md:w-1/3">
+            <h5 className="text-3xl leading-12 font-bold md:text-4xl">
+              Let’s ensure{" "}
+              <em className="text-primary relative">
+                Holistic
+                <Image
+                  src={streak}
+                  alt=""
+                  className="absolute top-[-38px] right-0"
+                />
+              </em>{" "}
+              <br className="hidden lg:block" />
+              <em className="text-primary"> Healing </em>for{" "}
+              <br className="hidden lg:block" />
+              Well - Being
+            </h5>
+            <Button className="w-full" asChild>
+              <Link href={"/donate"}>
+                <Heart className="mr-4 size-4" fill="red" />
+                Yes! I want to Help!
+              </Link>
+            </Button>
+          </div>
 
-        {/* Video in Upper Section */}
-        <div
-          className={`relative flex justify-end transition-all duration-700 md:w-2/3 ${
-            fixed ? "opacity-100 visible" : "opacity-0 invisible"
-          }`}
-          style={{
-            position: fixed ? "relative" : "absolute",
-            transform: `scale(${scale}) translateY(${translateY}px)`,
-            transition: "all 0.7s ease-in-out",
-          }}
-        >
+          {/* Video in Upper Section */}
+          <div
+            className={`relative flex justify-end transition-all duration-700 md:w-2/3 ${
+              fixed ? "visible opacity-100" : "invisible opacity-0"
+            }`}
+            style={{
+              position: fixed ? "relative" : "absolute",
+              transform: `scale(${scale}) translateY(${translateY}px)`,
+              transition: "all 0.7s ease-in-out",
+            }}
+          >
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="h-full transition-all duration-700"
+              ref={videoRef}
+            >
+              <source src="/cry-hero-video.mp4" type="video/mp4" />
+            </video>
+            <Image
+              src={vidioPatch}
+              alt="Vidio Patch"
+              className="absolute h-full w-full"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Image */}
+      <Image src={esureHealth} alt="esureHealth" className="w-full" />
+
+      {/* Neeche wala div - Yahaan video smoothly aa jayega */}
+      <div className="w-full overflow-hidden transition-all duration-700">
+        {!fixed && (
           <video
             autoPlay
-            muted
             loop
-            className="h-full transition-all duration-700"
-            ref={videoRef}
+            muted
+            playsInline
+            className="visible w-full opacity-100 transition-all duration-700"
           >
             <source src="/cry-hero-video.mp4" type="video/mp4" />
           </video>
-          <Image
-            src={vidioPatch}
-            alt="Vidio Patch"
-            className="absolute h-full w-full"
-          />
-        </div>
+        )}
       </div>
-    </div>
 
-    {/* Image */}
-    <Image src={esureHealth} alt="esureHealth" className="w-full" />
-
-    {/* Neeche wala div - Yahaan video smoothly aa jayega */}
-    <div className="w-full overflow-hidden transition-all duration-700">
-      {!fixed && (
-        <video
-          autoPlay
-          muted
-          loop
-          className="w-full opacity-100 visible transition-all duration-700"
-        >
-          <source src="/cry-hero-video.mp4" type="video/mp4" />
-        </video>
-      )}
-    </div>
-
-    
       <div className="mx-auto max-w-7xl space-y-16 px-3">
         <HeadingSec className="[text-shadow:_0_2px_4px_#fff633]">
           {" "}
@@ -578,83 +579,7 @@ export default function Page() {
             </em>
           </HeadingSec>
 
-          <Tabs defaultValue="Ranchi" className="mx-auto w-full">
-            <TabsList className="mx-auto flex w-fit flex-wrap gap-3 md:gap-5">
-              <TabsTrigger value="Ranchi" className="cursor-pointer">
-                Ranchi
-              </TabsTrigger>
-              <TabsTrigger value="Kolkata" className="cursor-pointer">
-                Kolkata
-              </TabsTrigger>
-              <TabsTrigger value="Delhi" className="cursor-pointer">
-                Delhi
-              </TabsTrigger>
-              <TabsTrigger value="Patna" className="cursor-pointer">
-                Patna
-              </TabsTrigger>
-            </TabsList>
-
-            <TabsContent
-              value="Ranchi"
-              className="flex w-full flex-wrap justify-center gap-3 md:gap-5"
-            >
-              {[...Array(5)].map((_, index) => (
-                <Image
-                  key={index}
-                  src={smallPhoto}
-                  alt={`smallPhoto ${index + 1}`}
-                  width={256}
-                  height={256}
-                  className="h-auto w-full max-w-xs rounded-lg shadow-md"
-                />
-              ))}
-            </TabsContent>
-            <TabsContent
-              value="Kolkata"
-              className="flex w-full flex-wrap justify-center gap-3 md:gap-5"
-            >
-              {[...Array(5)].map((_, index) => (
-                <Image
-                  key={index}
-                  src={smallPhoto}
-                  alt={`smallPhoto ${index + 1}`}
-                  width={256}
-                  height={256}
-                  className="h-auto w-full max-w-xs rounded-lg shadow-md"
-                />
-              ))}
-            </TabsContent>
-            <TabsContent
-              value="Delhi"
-              className="flex w-full flex-wrap justify-center gap-3 md:gap-5"
-            >
-              {[...Array(5)].map((_, index) => (
-                <Image
-                  key={index}
-                  src={smallPhoto}
-                  alt={`smallPhoto ${index + 1}`}
-                  width={256}
-                  height={256}
-                  className="h-auto w-full max-w-xs rounded-lg shadow-md"
-                />
-              ))}
-            </TabsContent>
-            <TabsContent
-              value="Patna"
-              className="flex w-full flex-wrap justify-center gap-3 md:gap-5"
-            >
-              {[...Array(5)].map((_, index) => (
-                <Image
-                  key={index}
-                  src={smallPhoto}
-                  alt={`smallPhoto ${index + 1}`}
-                  width={256}
-                  height={256}
-                  className="h-auto w-full max-w-xs rounded-lg shadow-md"
-                />
-              ))}
-            </TabsContent>
-          </Tabs>
+          <CampShow />
         </div>
         <div className="space-y-16">
           <HeadingSec className="px-3 [text-shadow:_0_2px_4px_#fff633]">

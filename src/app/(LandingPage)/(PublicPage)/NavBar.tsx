@@ -123,14 +123,14 @@ function NavBar({ className }: NavBarProps) {
                   </Button>
                 </li>
               </Link>
-              <Link href={"/treatment-camps-wellness-centers"}>
+              <Link href={"/treatment-results-reviews"}>
                 {" "}
                 <li>
                   <Button
                     variant="ghost"
                     className="flex w-full cursor-pointer justify-start rounded-none"
                   >
-                    Treatment Camps & Wellness Centers
+                    Treatment Results & Reviews
                   </Button>
                 </li>
               </Link>
@@ -141,9 +141,11 @@ function NavBar({ className }: NavBarProps) {
           </li>
         </ul>
 
-        <Button className="btnshow duration-.5 mr-4 cursor-pointer font-bold sm:ms-auto">
+        <Button className="btnshow duration-.5 mr-4 cursor-pointer font-bold sm:ms-auto" asChild>
+        <Link href={'/donate'}>
           <Heart className="mr-4 size-4" fill="red" />
           Donate Now
+          </Link>
         </Button>
       </div>
     </nav>
@@ -277,8 +279,8 @@ export function PhoneMenuBar({ className }: NavBarProps) {
                   link: "/health-awareness-campaigns",
                 },
                 {
-                  name: "Treatment Camps & Wellness Centers",
-                  link: "/treatment-camps-wellness-centers",
+                  name: "Treatment Results & Reviews",
+                  link: "/treatment-results-reviews",
                 },
               ].map((item, index) => (
                 <li

@@ -48,3 +48,11 @@ export const contactSchema = z.object({
 });
 
 export type ContactValues = z.infer<typeof contactSchema>;
+
+export const appoinmetSchema = z.object({
+  fullname: requiredString,
+  phone: requiredString,
+  country:requiredString
+});
+
+export type AppoinmetValues = z.infer<typeof appoinmetSchema>;

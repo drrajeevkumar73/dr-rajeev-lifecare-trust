@@ -37,6 +37,7 @@ import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { signup } from "./(signup)/actions";
 import { login } from "./(login)/actions";
+import BookAppoinmet from "@/components/BookAppoinmet";
 
 interface NavBarProps {
   className?: string;
@@ -78,6 +79,7 @@ function NoSessionNavBar({ className }: NavBarProps) {
       if (error) toast.error(error);
     });
   }
+  const [poup, setpoup] = useState(false);
 
   return (
     <nav className={cn(`px-3 shadow-md`, className)}>
@@ -189,14 +191,14 @@ function NoSessionNavBar({ className }: NavBarProps) {
                   </Button>
                 </li>
               </Link>
-              <Link href={"/treatment-camps-wellness-centers"}>
+              <Link href={"/treatment-results-reviews"}>
                 {" "}
                 <li>
                   <Button
                     variant="ghost"
                     className="flex w-full cursor-pointer justify-start rounded-none"
                   >
-                    Treatment Camps & Wellness Centers
+                    Treatment Results & Reviews
                   </Button>
                 </li>
               </Link>
@@ -207,11 +209,20 @@ function NoSessionNavBar({ className }: NavBarProps) {
           </li>
         </ul>
 
-        <Button className="btnshow duration-.5 mr-4 cursor-pointer font-bold sm:ms-auto">
+        <Button className="btnshow duration-.5 mr-4 cursor-pointer font-bold sm:ms-auto" asChild>
+          <Link href={'/donate'}>
           <Heart className="mr-4 size-4" fill="red" />
           Donate Now
+          </Link>
         </Button>
-
+        <Button
+          className="btnshow duration-.5 mr-4 cursor-pointer font-bold  sm:opacity-100 sm:visible opacity-0 invisible"
+          onClick={() => setpoup(true)}
+        >
+          <Heart className="mr-4 size-4" fill="red" />
+          Book Appointment
+        </Button>
+        <BookAppoinmet isOpen={poup} onClose={() => setpoup(false)} />
         {dialogPoup ? (
           <Dialog>
             <DialogTrigger className="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 btnshow duration-.5 mr-4 inline-flex h-9 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-bold whitespace-nowrap shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-3 sm:ms-auto [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4">
@@ -387,7 +398,7 @@ export default NoSessionNavBar;
 export function NoNavBarPhoneMenuBar({ className }: NavBarProps) {
   const [hmbegarMenu, setHmbegarMenu] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
-
+  const [poup, setpoup] = useState(false);
   const toggleDropdown = (menu: any) => {
     setOpenDropdown(openDropdown === menu ? null : menu);
   };
@@ -545,8 +556,8 @@ export function NoNavBarPhoneMenuBar({ className }: NavBarProps) {
                   link: "/health-awareness-campaigns",
                 },
                 {
-                  name: "Treatment Camps & Wellness Centers",
-                  link: "/treatment-camps-wellness-centers",
+                  name: "Treatment Results & Reviews",
+                  link: "/treatment-results-reviews",
                 },
               ].map((item, index) => (
                 <li
@@ -572,7 +583,16 @@ export function NoNavBarPhoneMenuBar({ className }: NavBarProps) {
           </li>
         </ul>
 
-        <div className="mt-9">
+       
+        <BookAppoinmet isOpen={poup} onClose={() => setpoup(false)} />
+        <div className="mt-9 space-y-6">
+        <Button
+          className="btnshow w-full duration-.5 mr-4 cursor-pointer font-bold"
+          onClick={() => setpoup(true)}
+        >
+          <Heart className="mr-4 size-4" fill="red" />
+          Book Appointment
+        </Button>
           {dialogPoup ? (
             <Dialog>
               <DialogTrigger className="focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 btnshow duration-.5 mr-4 inline-flex h-9 w-full shrink-0 cursor-pointer items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-bold whitespace-nowrap shadow-xs transition-[color,box-shadow] outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 has-[>svg]:px-3 sm:ms-auto [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4">

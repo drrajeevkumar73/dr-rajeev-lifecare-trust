@@ -70,3 +70,12 @@ model Contact {
 
   @@map("contacts")
 }
+
+model Appoinment {
+  id       String @id @default(cuid())
+  fullname String
+  phone    String
+  country  String
+
+  @@map("appoinments")
+}

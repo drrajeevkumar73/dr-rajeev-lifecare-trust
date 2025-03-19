@@ -1,5 +1,5 @@
 "use client";
-import { EffectCoverflow, Navigation } from "swiper/modules";
+import { EffectCoverflow, } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image, { StaticImageData } from "next/image";
 
@@ -18,6 +18,7 @@ function CardCarusol({ items }: itemsPorps) {
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
+       
         centeredSlides={true}
         loop={true}
         slidesPerView={"auto"}
@@ -28,7 +29,7 @@ function CardCarusol({ items }: itemsPorps) {
           modifier: 1,
           slideShadows: true,
         }}
-        modules={[EffectCoverflow, Navigation]}
+        modules={[EffectCoverflow]}
         breakpoints={{
           200: {
             // For screens larger than 640px
@@ -97,7 +98,7 @@ export function BannerCarusol({ logItems }: LongImageProps) {
       pagination={true}
       modules={[EffectCoverflow]}
       className="mySwiper"
-      navigation={true}
+    
     >
       {logItems.map((v) => (
         <SwiperSlide className="md:w-[1000px]!" key={v.id}>
